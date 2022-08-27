@@ -39,6 +39,12 @@ body{
     transition: 0.3s linear;
 }
 
+
+.darker-header{
+    color: white;
+    transition: 0.3s linear;
+}
+
 .header{
     justify-content: center;
     align-items: center;
@@ -257,12 +263,14 @@ button{
     border-radius: 5px;
     border: none;
 }
+
 .fa-check:hover{
     font-weight: 600;
     color: limegreen;
     background-color: transparent;
     transition: all 0.5s ease;
 }
+
 .fa-trash{
     padding: 5px;
     border-radius: 5px;
@@ -271,16 +279,19 @@ button{
     border: none;
     margin-left: 5px;
 }
+
 .fa-trash:hover{
     background: none;
     transition: all .5s ease;
 }
+
 .done{
     text-decoration: line-through;
     transition: all .3s ease;
     opacity: 0.4;
     color: white;
 }
+
 .remove{
     transition: all .3s ease;
     transform: translateX(150px);
@@ -292,12 +303,15 @@ button{
         max-width: 100%;
         margin: 0 10px;
     }
+
     h2{
         font-size: clamp(20px, 5vw, 30px);
     }
+
     form{
         font-size: clamp(11px, 1.5vw, 14px);
     }
+
     ol{
         margin-left: 3%;
         margin-right: 3%;
