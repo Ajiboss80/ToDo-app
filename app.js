@@ -64,11 +64,11 @@ function doneOrDelete(e) {
 function changeTheme(style) {
     document.body.className = style;
 
-    if (style === 'darker') {
-        document.querySelector('.heading').classList.add('darker');
+    if (style === 'darker-header') {
+        document.querySelector('.heading').classList.add('darker-header');
     } 
     else {
-        document.querySelector('.heading').classList.remove('darker');
+        document.querySelector('.heading').classList.remove('darker-header');
     }
 
     input.className = `${style}-input`;
