@@ -1,11 +1,8 @@
 *{
+    font-size: clamp(16px, 2vw, 20px);
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
     outline: none;
-}
-
-html, body{
-    height: 100%;
 }
 
 body{
@@ -13,12 +10,15 @@ body{
     background-position: center;
     display: flex;
     justify-content: center;
-    margin: 0;
     padding: 5% 0 2%;
     overflow-y: auto;
-    background-image: linear-gradient(135deg, red, purple);
-    color: white;
-    transition: all .3s linear;
+    width: 100vw;
+    margin: 0 !important;
+}
+
+button{
+    background: none;
+    border: none;
 }
 
 .standard{
@@ -38,7 +38,6 @@ body{
     color: white;
     transition: 0.3s linear;
 }
-
 
 .darker-header{
     color: white;
@@ -80,18 +79,20 @@ body{
 .content{
     align-items: center;
     display: block;
-    max-width: 45%;
+    width: 60%;
 }
 
 h2{
     display: block;
     text-align: center;
+    font-size: clamp(27px, 5vw, 32px);
 }
 
-form{
+form, .fa-plus{
     align-items: center;
     display: flex;
-    font-size: 14px;
+    font-size: clamp(14px, 5vw, 24px);
+    justify-content: center;
 }
 
 input{
@@ -99,10 +100,8 @@ input{
     align-items: center;
     color: black;
     padding: 5px 10px;
-    border: transparent;
-    border-radius: 10px;
-    transition: all .5s ease;
-    width: 100%;
+    border: none;
+    border-radius: 8px;
 }
 
 input:hover, input:focus{
@@ -144,128 +143,107 @@ form input.darker-input:hover {
     background-color: rgb(1, 49, 65);
 }
 
-.add{
-    align-items: center;
-    margin-left: 5px;
-    display: flex;
-    align-items: center;
-    border: none;
-    font-size: 24px;
-    padding: 3px 3px;
-    width: 27px;
-    cursor: pointer;
-    color: white;
-}
-
-.add:hover{
-    color: purple;
-    transition: all .3s ease;
-    border-radius: 8px;
-    background: white;
-}
-
 .standard-button{
     align-items: center;
     margin-left: 5px;
     display: flex;
-    align-items: center;
     border: none;
-    font-size: 24px;
-    padding: 3px 3px;
-    width: 27px;
+    padding: 1%;
     cursor: pointer;
     color: white;
-    transition: all .3s ease;
+    background: transparent;
 }
 
 .standard-button:hover{
-    align-items: center;
+    border-radius: 8px;
+    transition: all .3s ease;
     color: purple;
-    border-radius: 10px;
     background: white;
 }
 
 .light-button{
-    background-color: transparent;
     color:black;
     align-items: center;
     margin-left: 5px;
     display: flex;
-    align-items: center;
     border: none;
-    font-size: 24px;
-    padding: 3px 3px;
-    width: 27px;
+    padding: 1%;
     cursor: pointer;
-    transition: all .3s ease;
+    background: transparent;
 }
 
 .light-button:hover{
-    align-items: center;
+    transition: all .3s ease;
     background-color: white;
     color: black;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .darker-button {
-    background-color: transparent;
     color: white;
     align-items: center;
     margin-left: 5px;
     display: flex;
-    align-items: center;
     border: none;
-    font-size: 24px;
-    padding: 3px 3px;
-    width: 27px;
+    padding: 1%;
     cursor: pointer;
-    transition: all .3s ease;
+    background: transparent;
 }
 
 .darker-button:hover {
-    background-color: white;
-    color: rgb(0, 31, 41);
-    border-radius: 10px;
-    align-items: center;
+    transition: all .3s ease;
+    background-color: rgb(1, 49, 65);
+    color: white;
+    border-radius: 8px;
 }
 
 ol{
-    display: block;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 0;
-    font-size: 14px;
 }
 
 li{
+    /* justify-content: space-between; */
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 5px;
 }
 
 li div{
     align-items: center;
     display: flex;
+    margin-left: 5px;
 }
 
-button{
-    align-items: center;
-    background-color: transparent;
-    border: none;
+.edit, .delete, .check{
     padding: 0;
 }
 
+.fa-edit{
+    padding: 5px;
+    color: skyblue;
+    border-radius: 5px;
+}
+
+.fa-edit:hover{
+    color: white;
+    background-color: skyblue;
+    transition: all 0.5s ease;
+}
+
 .fa-check{
-    margin-left: 20px;
     padding: 5px;
     color: white;
     background-color: green;
     border-radius: 5px;
     border: none;
+    margin-left: 5px;
 }
 
 .fa-check:hover{
-    font-weight: 600;
     color: limegreen;
     background-color: transparent;
     transition: all 0.5s ease;
@@ -283,6 +261,7 @@ button{
 .fa-trash:hover{
     background: none;
     transition: all .5s ease;
+    color: red;
 }
 
 .done{
@@ -298,23 +277,42 @@ button{
     opacity: 0;
 }
 
+.clear{
+    padding: 5px;
+    color: white;
+    font-size: clamp(10px, 5vw, 14px);
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.clear:active{
+    color: red;
+    background-color: white;
+    transition: all ease;
+}
+
+.clear:hover{
+    color: red;
+    background-color: white;
+    transition: all .3s ease;
+}
+
 @media (max-width: 500px) {
     .content{
-        max-width: 100%;
+        width: 100%;
         margin: 0 10px;
     }
-
     h2{
         font-size: clamp(20px, 5vw, 30px);
     }
-
     form{
         font-size: clamp(11px, 1.5vw, 14px);
     }
-
     ol{
-        margin-left: 3%;
-        margin-right: 3%;
+        margin: 12px 3%;
         font-size: clamp(12px, 2.5vw, 14px);
+    }
+    .clear{
+        margin: 0 35%;
     }
 }
